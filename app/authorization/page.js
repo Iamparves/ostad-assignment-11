@@ -27,15 +27,21 @@ const Page = () => {
     >
       <div className="text-center p-10 w-full max-w-xl bg-white border rounded-lg">
         <h3 className="font-bold text-gray-800 text-xl mb-3">
-          {token.startsWith("Bearer") ? "Changed Token" : "Token:"}
+          Authorization Token
         </h3>
         <p className="font-medium break-words text-gray-500">{token}</p>
         <button
-          className="bg-indigo-600 text-white mt-5 py-3 px-5 rounded-full"
+          className="bg-indigo-600 text-white mt-5 py-3 px-5 rounded-full disabled:opacity-50 disabled:pointer-events-none inline-block"
           onClick={addBearer}
+          disabled={token.startsWith("Bearer")}
         >
           Send Token
         </button>
+        <p className="text-[15px] text-gray-400 font-medium mt-3">
+          {token.startsWith("Bearer")
+            ? "Bearer prefix added to token"
+            : "Click Send Token to prefix with Bearer"}
+        </p>
       </div>
     </section>
   );
