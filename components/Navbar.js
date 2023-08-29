@@ -11,6 +11,7 @@ const Navbar = () => {
           <nav className="flex items-center gap-5 text-blue-500 font-medium">
             <Link href="/">Home</Link>
             <Link href="/redirect">Redirect</Link>
+            <Link href="/authorization">Authorization</Link>
           </nav>
         </div>
       </div>
